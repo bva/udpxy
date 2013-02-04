@@ -193,6 +193,7 @@ add_client( struct server_ctx* ctx,
         return ERR_INTERNAL;
 
     client = &(ctx->cl[ index ]);
+    client->http_headers = NULL;
     client->pid = cpid;
 
     (void) strncpy( client->mcast_addr, maddr, IPADDR_STR_SIZE );

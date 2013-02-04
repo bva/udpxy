@@ -41,6 +41,11 @@ struct tput_stat {
     double      nsec;       /* within how many seconds    */
 };
 
+struct http_header {
+    char* name;
+    char* value;
+};
+
 /* context of a relay client */
 struct client_ctx
 {
@@ -53,6 +58,7 @@ struct client_ctx
     struct tput_stat
                 tstat;
 
+    struct http_header** http_headers;
     char        tail[ MAX_TAIL_LEN + 1 ];
 };
 
